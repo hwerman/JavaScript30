@@ -69,7 +69,7 @@
       // console.log(this.value);
       console.log(this.dataset);
       const suffix = this.dataset.sizing || '';
-      /*so you can take the px to the end of the new value below*/
+      /*so you can take the px to the end of the new value below or else it won't read*/
       document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix)
     }
 
