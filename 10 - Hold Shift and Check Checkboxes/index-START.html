@@ -104,6 +104,37 @@
   </div>
 
 <script>
+const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]')
+
+let lastChecked;
+
+function handleCheck(e){
+
+  let inBetween = false;
+  if (e.shiftKey && this.checked){
+    //loop over all checkboxes
+    //see which was first
+    //see which is last
+    checkboxes.forEach(checkbox => {
+      console.log(checkbox);
+      if(checkbox === this || checkbox === lastChecked) {
+        inBetween = !inBetween;
+        //inBetween is switched right when first is checked
+      }
+
+      if (inBetween){
+        checkbox.checked = true;
+      }
+      //inBetween is a flag variable
+      });
+    }
+  lastChecked = this;
+}
+
+
+
+checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck));
+
 </script>
 </body>
 </html>
