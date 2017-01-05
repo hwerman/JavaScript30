@@ -18,28 +18,76 @@
     }
 
     // Regular
+    console.log('anything');
 
     // Interpolated
+    console.log('this is a %s string!', 'word');
+    //better version of that ^ is this:
+    const word = 'word';
+    console.log(`this is a ${word} string!`);
 
     // Styled
+    console.log('%c I am some great text', 'font-size: 50px');
+    //changes the font size in the console
 
     // warning!
+    console.warn('sample warning');
+    //will give you stack trace as to where the error was called
 
     // Error :|
+    console.error('sample error');
+    //will display error and give you stack trace
 
     // Info
+    console.info('info statement');
 
     // Testing
+    console.assert(1 === 1, 'That is wrong');
+    //will tell you assertion failed; will only show up if it is false
+    console.assert(4 === 1, 'That is wrong');
+    //this will print
+
+    const p = document.querySelector('p');
+    console.assert(p.classList.contains('ouch'), 'That is incorrect');
 
     // clearing
+    // console.clear();
+
 
     // Viewing DOM Elements
+    console.dir(p);
+    //gives you the dropdown of the properties and methods of the element
 
     // Grouping together
+    dogs.forEach(dog =>{
+      console.groupCollapsed(`${dog.name}`);
+      // console.group(`${dog.name}`);
+        console.log(`This is ${dog.name}`);
+        console.log(`${dog.age} years old`);
+      console.groupEnd(`${dog.name}`);
+
+      })
+
 
     // counting
+    console.count('Mention of things');
+    console.count('Mention of places');
+    console.count('Mention of places');
+    console.count('Mention of places');
+    console.count('Mention of people');
 
     // timing
+    console.log('fetching data');
+    fetch('insert link here')
+    .then(data => data.json())
+    .then(data=>{
+      console.timeEnd('fetching data');
+      console.log(data);
+    })
+    //will tell you how long the fetch took
+
+    console.table(dogs);
+    //use for array of objects that have the same properties
 
   </script>
 </body>
