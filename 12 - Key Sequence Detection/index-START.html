@@ -7,6 +7,23 @@
 </head>
 <body>
 <script>
+const pressed =[];
+const secretCode = 'wesbos';
+
+window.addEventListener('keyup', (e) => {
+  console.log(e.key);
+  pressed.push(e.key);
+  pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+  //negative will take it from the end of the array
+
+  if(pressed.join('').includes(secretCode)){
+    console.log('yep!');
+  cornify_add();
+  //will give you random unicorns on the screen!
+  }
+
+  console.log(pressed);
+})
 </script>
 </body>
 </html>
